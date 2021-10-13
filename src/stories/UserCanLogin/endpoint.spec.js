@@ -4,7 +4,9 @@ const knex = requireKnex();
 const httpServer = requireHttpServer();
 
 describe("Test API UserCanLogin", () => {
-  beforeAll(async () => {});
+  beforeAll(async () => {
+    await knex("users").truncate();
+  });
 
   it("user_can_login", async () => {
     let registerResult;
